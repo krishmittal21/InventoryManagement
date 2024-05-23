@@ -8,11 +8,50 @@
 import SwiftUI
 
 struct IMProductCardView: View {
+    
+    var product: IMProduct
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack(alignment: .bottomTrailing) {
+            VStack(alignment: .leading) {
+                Image("DefaultProductImage")
+                    .resizable()
+                    .frame(width: 175,height: 160)
+                    .cornerRadius(12)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(colorScheme == .dark ? .white : .gray, lineWidth: 0.5)
+                    )
+                
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(product.productName)
+                            .font(.subheadline)
+                            .padding(.vertical, 1)
+                        
+                        Text("₹ \(product.price)")
+                            .font(.caption2)
+                    }
+                    
+                    Spacer()
+                    
+                    Button{
+                        
+                    } label: {
+                        Image(systemName: "square.and.arrow.up")
+                            .resizable()
+                            .frame(width: 20,height: 25)
+                            .padding(.trailing)
+                    }
+                }
+            }
+        }
+        .frame(width: 185, height: 260)
+        .cornerRadius(15)
     }
 }
 
 #Preview {
-    IMProductCardView()
+    IMProductCardView(product: productList[1])
 }
