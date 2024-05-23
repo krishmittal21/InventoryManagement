@@ -53,10 +53,11 @@
 		CC508B6F2BFF58060027CF16 /* InventoryManagement */ = {
 			isa = PBXGroup;
 			children = (
-				CC508B702BFF58060027CF16 /* InventoryManagementApp.swift */,
-				CC508B722BFF58060027CF16 /* ContentView.swift */,
-				CC508B7E2BFF5C540027CF16 /* ColorExtension.swift */,
-				CC508B742BFF58070027CF16 /* Assets.xcassets */,
+				CC508B842BFF5F920027CF16 /* Models */,
+				CC508B832BFF5F8B0027CF16 /* ViewModels */,
+				CC508B822BFF5F800027CF16 /* Views */,
+				CC508B812BFF5F750027CF16 /* Utilities */,
+				CC508B802BFF5F6D0027CF16 /* Support */,
 				CC508B762BFF58070027CF16 /* Preview Content */,
 			);
 			path = InventoryManagement;
@@ -68,6 +69,53 @@
 				CC508B772BFF58070027CF16 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CC508B802BFF5F6D0027CF16 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				CC508B742BFF58070027CF16 /* Assets.xcassets */,
+				CC508B702BFF58060027CF16 /* InventoryManagementApp.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		CC508B812BFF5F750027CF16 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CC508B852BFF5FA90027CF16 /* Extensions */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CC508B822BFF5F800027CF16 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC508B722BFF58060027CF16 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CC508B832BFF5F8B0027CF16 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CC508B842BFF5F920027CF16 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CC508B852BFF5FA90027CF16 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CC508B7E2BFF5C540027CF16 /* ColorExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
