@@ -12,6 +12,8 @@ struct ProductsListingView: View {
     @StateObject private var viewModel = ProductsListingViewModel()
     @State private var showAddProduct: Bool = false
     @State private var search: String = ""
+    @State private var selectedOption = "In Stock"
+    @Namespace private var namespace
     
     var body: some View {
         ZStack {
@@ -22,12 +24,33 @@ struct ProductsListingView: View {
                 
                 searchBar
                 
+                optionSelector
+                
                 Spacer()
             }
         }
         .sheet(isPresented: $showAddProduct, content: {
             AddProductView()
         })
+    }
+    
+    @ViewBuilder
+    var optionSelector: some View {
+        HStack(spacing: 50, content: {
+            IMOptionView(title: "In Stock", isSelected: selectedOption == "In Stock", namespace: namespace, action: {
+                selectedOption = "In Stock"
+            })
+            
+            IMOptionView(title: "Out of Stock", isSelected: selectedOption == "Out of Stock", namespace: namespace, action: {
+                selectedOption = "Out of Stock"
+            })
+            
+            IMOptionView(title: "Category", isSelected: selectedOption == "Category", namespace: namespace,  action: {
+                selectedOption = "Category"
+                
+            })
+        })
+        .padding()
     }
     
     @ViewBuilder
