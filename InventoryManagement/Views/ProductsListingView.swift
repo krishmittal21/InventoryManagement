@@ -11,6 +11,7 @@ struct ProductsListingView: View {
     
     @StateObject private var viewModel = ProductsListingViewModel()
     @State private var showAddProduct: Bool = false
+    @State private var search: String = ""
     
     var body: some View {
         ZStack {
@@ -19,12 +20,31 @@ struct ProductsListingView: View {
             VStack {
                 header
                 
+                searchBar
+                
                 Spacer()
             }
         }
         .sheet(isPresented: $showAddProduct, content: {
             AddProductView()
         })
+    }
+    
+    @ViewBuilder
+    var searchBar: some View {
+        HStack {
+            HStack {
+                TextField("Search For Your Products", text: $search)
+                    .padding()
+                
+                Image(systemName: "magnifyingglass")
+                    .padding(.trailing)
+                
+            }
+            .background(Color.brandBlueColor.opacity(0.2))
+            .cornerRadius(12)
+        }
+        .padding(.horizontal)
     }
     
     @ViewBuilder
