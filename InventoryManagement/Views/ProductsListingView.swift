@@ -15,6 +15,8 @@ struct ProductsListingView: View {
     @State private var selectedOption = "In Stock"
     @Namespace private var namespace
     private var columns = [GridItem(.flexible()), GridItem(.flexible())]
+    @State private var selectedProduct: IMProduct?
+    @State private var isShowingProductDetail: Bool = false
     
     var body: some View {
         ZStack {
@@ -37,6 +39,11 @@ struct ProductsListingView: View {
         .sheet(isPresented: $showAddProduct, content: {
             AddProductView()
         })
+        .sheet(isPresented: $isShowingProductDetail, content: {
+            if let selectedProduct = selectedProduct {
+                ProductDetailView(product: selectedProduct)
+            }
+        })
     }
     
     @ViewBuilder
@@ -45,6 +52,10 @@ struct ProductsListingView: View {
             LazyVGrid(columns: columns, spacing: 16) {
                 ForEach(productList, id: \.self) { product in
                     IMProductCardView(product: product)
+                        .onTapGesture {
+                            selectedProduct = product
+                            isShowingProductDetail = true
+                        }
                 }
             }
             .padding(.horizontal, 15)
