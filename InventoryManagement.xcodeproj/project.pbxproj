@@ -11,6 +11,7 @@
 		CC508B732BFF58060027CF16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B722BFF58060027CF16 /* ContentView.swift */; };
 		CC508B752BFF58070027CF16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC508B742BFF58070027CF16 /* Assets.xcassets */; };
 		CC508B782BFF58070027CF16 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC508B772BFF58070027CF16 /* Preview Assets.xcassets */; };
+		CC508B7F2BFF5C540027CF16 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B7E2BFF5C540027CF16 /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		CC508B722BFF58060027CF16 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CC508B742BFF58070027CF16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC508B772BFF58070027CF16 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CC508B7E2BFF5C540027CF16 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				CC508B702BFF58060027CF16 /* InventoryManagementApp.swift */,
 				CC508B722BFF58060027CF16 /* ContentView.swift */,
+				CC508B7E2BFF5C540027CF16 /* ColorExtension.swift */,
 				CC508B742BFF58070027CF16 /* Assets.xcassets */,
 				CC508B762BFF58070027CF16 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC508B7F2BFF5C540027CF16 /* ColorExtension.swift in Sources */,
 				CC508B732BFF58060027CF16 /* ContentView.swift in Sources */,
 				CC508B712BFF58060027CF16 /* InventoryManagementApp.swift in Sources */,
 			);
