@@ -15,10 +15,33 @@ struct ProductsListingView: View {
     var body: some View {
         ZStack {
             addProductButton
+            
+            VStack {
+                header
+                
+                Spacer()
+            }
         }
         .sheet(isPresented: $showAddProduct, content: {
             AddProductView()
         })
+    }
+    
+    @ViewBuilder
+    var header: some View {
+        HStack {
+            Image("Person")
+                .resizable()
+                .frame(width: 40, height: 40)
+            
+            Text("Your Products")
+                .font(.title2)
+                .boldMyText()
+            
+            Spacer()
+        }
+        .padding(.vertical,10)
+        .padding(.horizontal,20)
     }
     
     @ViewBuilder
