@@ -14,10 +14,10 @@ struct ProductsListingView: View {
     @State private var search: String = ""
     @State private var selectedOption = "In Stock"
     @Namespace private var namespace
+    private var columns = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
         ZStack {
-            addProductButton
             
             VStack {
                 header
@@ -26,12 +26,30 @@ struct ProductsListingView: View {
                 
                 optionSelector
                 
+                productListing
+                
                 Spacer()
             }
+            .ignoresSafeArea(.container, edges: .bottom)
+            
+            addProductButton
         }
         .sheet(isPresented: $showAddProduct, content: {
             AddProductView()
         })
+    }
+    
+    @ViewBuilder
+    var productListing: some View {
+        ScrollView {
+            LazyVGrid(columns: columns, spacing: 16) {
+                ForEach(productList, id: \.self) { product in
+                    IMProductCardView(product: product)
+                }
+            }
+            .padding(.horizontal, 15)
+        }
+        
     }
     
     @ViewBuilder
