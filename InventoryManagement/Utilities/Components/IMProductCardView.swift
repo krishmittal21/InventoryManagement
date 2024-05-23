@@ -10,6 +10,7 @@ import SwiftUI
 struct IMProductCardView: View {
     
     var product: IMProduct
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -20,7 +21,7 @@ struct IMProductCardView: View {
                     .cornerRadius(12)
                     .overlay(
                         RoundedRectangle(cornerRadius: 12)
-                            .stroke(.gray, lineWidth: 0.5)
+                            .stroke(colorScheme == .dark ? .white : .gray, lineWidth: 0.5)
                     )
                 
                 HStack {
@@ -28,11 +29,9 @@ struct IMProductCardView: View {
                         Text(product.productName)
                             .font(.subheadline)
                             .padding(.vertical, 1)
-                            .foregroundStyle(.black)
                         
                         Text("₹ \(product.price)")
                             .font(.caption2)
-                            .foregroundStyle(.black)
                     }
                     
                     Spacer()
@@ -43,7 +42,6 @@ struct IMProductCardView: View {
                         Image(systemName: "square.and.arrow.up")
                             .resizable()
                             .frame(width: 20,height: 25)
-                            .foregroundStyle(.black)
                             .padding(.trailing)
                     }
                 }

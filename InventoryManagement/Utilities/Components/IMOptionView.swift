@@ -19,7 +19,6 @@ struct IMOptionView: View {
                 .font(.callout)
                 .boldMyText()
                 .padding(.bottom, 10)
-                .foregroundStyle(.black)
                 .frame(minWidth: 50)
 
             if isSelected {
