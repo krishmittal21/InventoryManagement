@@ -10,11 +10,15 @@ import SwiftUI
 struct ProductsListingView: View {
     
     @StateObject private var viewModel = ProductsListingViewModel()
+    @State private var showAddProduct: Bool = false
     
     var body: some View {
         ZStack {
             addProductButton
         }
+        .sheet(isPresented: $showAddProduct, content: {
+            AddProductView()
+        })
     }
     
     @ViewBuilder
@@ -23,7 +27,7 @@ struct ProductsListingView: View {
             Spacer()
             
             Button {
-                
+                showAddProduct.toggle()
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 25.0)
