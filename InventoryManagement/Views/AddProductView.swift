@@ -23,6 +23,20 @@ struct AddProductView: View {
                     productPhotoPicker
                     
                     inputProductDetails
+                    
+                }
+                .padding()
+                
+                Divider()
+                
+                HStack {
+                    IMButton(buttonText: "Save", background: Color.brandBlueColor, textColor: .white) {
+                        
+                    }
+                    
+                    IMButton(buttonText: "Add Another", background: Color.brandBlueColor.opacity(0.2), textColor: Color.brandBlueColor) {
+                        
+                    }
                 }
                 .padding()
                 .navigationTitle("Add Product")
@@ -36,6 +50,12 @@ extension AddProductView {
     @ViewBuilder
     var inputProductDetails: some View {
         VStack(alignment: .leading) {
+            Picker("Category", selection: $viewModel.productType) {
+                ForEach(ProductType.allCases, id: \.self) {
+                    Text($0.rawValue)
+                }
+            }
+            .pickerStyle(.menu)
             
             TextField("Item Name", text: $viewModel.name)
                 .customTextFieldStyle()
@@ -52,24 +72,16 @@ extension AddProductView {
                 .customTextFieldStyle()
                 .padding(.bottom, 10)
             
-            Text("Tax")
+            Text("Tax Rate")
                 .foregroundStyle(.gray)
             
             TextField("Tax", value: $viewModel.tax, formatter: NumberFormatter.currencyFormatter)
                 .customTextFieldStyle()
                 .padding(.bottom, 10)
             
-            HStack {
-                Text("Set Category")
-                
-                Spacer()
-                
-                Picker("Category", selection: $viewModel.productType) {
-                    ForEach(ProductType.allCases, id: \.self) {
-                        Text($0.rawValue)
-                    }
-                }
-            }
+           
+
+            
         }
     }
 }
