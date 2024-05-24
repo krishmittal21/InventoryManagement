@@ -16,7 +16,6 @@ struct ProductsListingView: View {
     @Namespace private var namespace
     private var columns = [GridItem(.flexible()), GridItem(.flexible())]
     @State private var selectedProduct: IMProduct?
-    @State private var isShowingProductDetail: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -28,7 +27,13 @@ struct ProductsListingView: View {
                     
                     optionSelector
                     
-                    productListing
+                    if viewModel.isLoading {
+                        Spacer()
+                        ProgressView().tint(Color.brandBlueColor)
+                        Spacer()
+                    } else {
+                        productListing
+                    }
                     
                     Spacer()
                 }
@@ -39,12 +44,10 @@ struct ProductsListingView: View {
             .sheet(isPresented: $showAddProduct, content: {
                 AddProductView()
             })
-            .sheet(isPresented: $isShowingProductDetail, content: {
-                if let selectedProduct = selectedProduct {
-                    ProductDetailView(product: selectedProduct)
-                }
-            })
-
+            .sheet(item: $selectedProduct) { product in
+                ProductDetailView(product: product)
+            }
+            
         }
     }
 }
@@ -55,17 +58,15 @@ extension ProductsListingView {
     var productListing: some View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 16) {
-                ForEach(productList, id: \.self) { product in
+                ForEach(viewModel.products) { product in
                     IMProductCardView(product: product)
                         .onTapGesture {
                             selectedProduct = product
-                            isShowingProductDetail = true
                         }
                 }
             }
             .padding(.horizontal, 15)
         }
-        
     }
     
     @ViewBuilder

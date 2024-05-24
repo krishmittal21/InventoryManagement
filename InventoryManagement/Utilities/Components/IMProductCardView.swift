@@ -15,14 +15,18 @@ struct IMProductCardView: View {
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             VStack(alignment: .leading) {
-                Image("DefaultProductImage")
-                    .resizable()
-                    .frame(width: 175,height: 160)
-                    .cornerRadius(12)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 12)
-                            .stroke(colorScheme == .dark ? .white : .gray, lineWidth: 0.5)
-                    )
+                // The API contains image: "" no links given, for testing use testImageURL
+                AsyncImage(url: URL(string: product.image!)) { image in
+                    image.resizable()
+                } placeholder: {
+                    Image("DefaultProductImage").resizable()
+                }
+                .frame(width: 175,height: 160)
+                .cornerRadius(12)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(colorScheme == .dark ? .white : .gray, lineWidth: 0.5)
+                )
                 
                 HStack {
                     VStack(alignment: .leading) {
@@ -30,7 +34,7 @@ struct IMProductCardView: View {
                             .font(.subheadline)
                             .padding(.vertical, 1)
                         
-                        Text("₹ \(product.price)")
+                        Text("\((product.price + (product.price * product.tax/100)).formattedCurrency())")
                             .font(.caption2)
                     }
                     
