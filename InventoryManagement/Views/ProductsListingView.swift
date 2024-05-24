@@ -19,8 +19,22 @@ struct ProductsListingView: View {
     @State private var isShowingProductDetail: Bool = false
     
     var body: some View {
+        if #available(iOS 16.0, *) {
+            NavigationStack {
+                page
+            }
+        } else {
+            NavigationView {
+                page
+            }
+        }
+    }
+}
+
+extension ProductsListingView {
+    @ViewBuilder
+    var page: some View {
         ZStack {
-            
             VStack {
                 header
                 
