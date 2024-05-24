@@ -79,9 +79,7 @@ extension AddProductView {
                 .customTextFieldStyle()
                 .padding(.bottom, 10)
             
-           
-
-            
+            Text("Final Price: \(viewModel.finalPrice)")
         }
     }
 }
