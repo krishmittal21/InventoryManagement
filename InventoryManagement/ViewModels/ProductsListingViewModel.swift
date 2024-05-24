@@ -45,8 +45,9 @@ class ProductsListingViewModel: ObservableObject {
                 if let name = dict[JSONKeys.productName.rawValue] as? String,
                    let type = dict[JSONKeys.productType.rawValue] as? String,
                    let price = dict[JSONKeys.price.rawValue] as? Double,
-                   let tax = dict[JSONKeys.tax.rawValue] as? Double {
-                    let product = IMProduct(id: UUID(), image: nil, price: price, productName: name, productType: type, tax: tax)
+                   let tax = dict[JSONKeys.tax.rawValue] as? Double,
+                   let imageURL = dict[JSONKeys.image.rawValue] as? String {
+                    let product = IMProduct(id: UUID(), image: imageURL, price: price, productName: name, productType: type, tax: tax)
                     products.append(product)
                 }
             }

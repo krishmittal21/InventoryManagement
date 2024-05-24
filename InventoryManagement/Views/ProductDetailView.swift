@@ -14,10 +14,14 @@ struct ProductDetailView: View {
     var body: some View {
         VStack {
             ZStack(alignment: .topTrailing) {
-                Image("DefaultProductImage")
-                    .resizable()
-                    .ignoresSafeArea(edges: .top)
-                    .frame(height: 300)
+                // The API contains image: "" no links given, for testing use testImageURL
+                AsyncImage(url: URL(string: product.image!)) { image in
+                    image.resizable()
+                } placeholder: {
+                    Image("DefaultProductImage").resizable()
+                }
+                .ignoresSafeArea(edges: .top)
+                .frame(height: 300)
                 
                 Image(systemName: "heart.fill")
                     .resizable()

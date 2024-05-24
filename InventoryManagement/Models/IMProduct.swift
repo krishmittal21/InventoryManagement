@@ -51,3 +51,5 @@ enum JSONKeys: String {
     case tax = "tax"
     case image = "image"
 }
+
+let testImageURL = URL(string: "https://picsum.photos/400")
