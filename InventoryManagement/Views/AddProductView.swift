@@ -19,20 +19,10 @@ struct AddProductView: View {
                 Divider()
                 
                 ScrollView {
-                    VStack {
-                        HStack {
-                            Text("Upload photos")
-                                .font(.system(.subheadline, design: .rounded))
-                                .foregroundStyle(.gray)
-                            
-                            Spacer()
-                            
-                            addPhotosButton
-                        }
-                    }
                     
-                    displayPhotos
+                    productPhotoPicker
                     
+                    inputProductDetails
                 }
                 .padding()
                 .navigationTitle("Add Product")
@@ -42,51 +32,88 @@ struct AddProductView: View {
     }
 }
 
+extension AddProductView {
+    @ViewBuilder
+    var inputProductDetails: some View {
+        VStack(alignment: .leading) {
+            
+            TextField("Item Name", text: $viewModel.name)
+                .customTextFieldStyle()
+                .padding(.vertical, 10)
+            
+            TextField("Description", text: $viewModel.description, axis: .vertical)
+                .customTextFieldStyle()
+                .padding(.bottom, 10)
+            
+            Text("Price")
+                .foregroundStyle(.gray)
+            
+            TextField("Price", value: $viewModel.sellingPrice, formatter: NumberFormatter.currencyFormatter)
+                .customTextFieldStyle()
+                .padding(.bottom, 10)
+            
+            Text("Tax")
+                .foregroundStyle(.gray)
+            
+            TextField("Tax", value: $viewModel.tax, formatter: NumberFormatter.currencyFormatter)
+                .customTextFieldStyle()
+                .padding(.bottom, 10)
+            
+            HStack {
+                Text("Set Category")
+                
+                Spacer()
+                
+                Picker("Category", selection: $viewModel.productType) {
+                    ForEach(ProductType.allCases, id: \.self) {
+                        Text($0.rawValue)
+                    }
+                }
+            }
+        }
+    }
+}
+
 // Photo Picker
 extension AddProductView {
     
     @ViewBuilder
-    var displayPhotos: some View {
-        if viewModel.selectedPhotoData.count > 0 {
-            Image(uiImage: UIImage(data: viewModel.selectedPhotoData)!)
-                .resizable()
-                .frame(width: 150, height: 150)
-                .clipShape(RoundedRectangle(cornerRadius: 5))
-                .cornerRadius(5)
-                .frame(maxWidth: .infinity)
-            
-        } else {
-            ZStack {
-                Color.gray.opacity(0.2)
-                
-                Rectangle()
-                    .strokeBorder(style: StrokeStyle(lineWidth: 1, dash: [3]))
-                
-                Text("Add Photos")
-                    .font(.system(.subheadline, design: .rounded))
-            }
-            .foregroundStyle(.gray)
-            .cornerRadius(5)
-            .frame(width: 150, height: 150)
-        }
-    }
-    
-    @ViewBuilder
-    var addPhotosButton: some View {
+    var productPhotoPicker: some View {
         PhotosPicker(
             selection: $photoPickerItems,
             maxSelectionCount: 1,
             matching: .images
         ) {
-            ZStack {
-                RoundedRectangle(cornerRadius: 15)
-                    .frame(width: 60, height: 40)
-                    .foregroundStyle(Color.brandBlueColor)
-                Text("Add")
-                    .font(.system(.title3, design: .rounded))
-                    .bold()
-                    .foregroundStyle(Color.white)
+            if viewModel.selectedPhotoData.count > 0 {
+                Image(uiImage: UIImage(data: viewModel.selectedPhotoData)!)
+                    .resizable()
+                    .frame(width: 150, height: 150)
+                    .clipShape(RoundedRectangle(cornerRadius: 5))
+                    .cornerRadius(5)
+                    .overlay(alignment: .topTrailing) {
+                        Image(systemName: "pencil.circle.fill")
+                            .imageScale(.large)
+                            .foregroundStyle(Color.brandBlueColor)
+                            .offset(x: 10, y: -10)
+                    }
+                    .padding(.vertical, 10)
+                    .frame(maxWidth: .infinity)
+                
+            } else {
+                ZStack {
+                    Color.gray.opacity(0.2)
+                    
+                    Rectangle()
+                        .strokeBorder(style: StrokeStyle(lineWidth: 1, dash: [3]))
+                    
+                    Text("Add Photos")
+                        .font(.system(.subheadline, design: .rounded))
+                }
+                .foregroundStyle(.gray)
+                .cornerRadius(5)
+                .frame(width: 150, height: 150)
             }
+            
         }
         .onChange(of: photoPickerItems) { items in
             Task {
