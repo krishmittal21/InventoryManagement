@@ -34,7 +34,7 @@ struct ProductDetailView: View {
                 
                 Text(product.productName)
                     .font(.title2)
-                    .boldMyText()
+                    .bold()
                 
                 HStack(spacing: 5) {
                     ForEach(0..<5) { index in
@@ -55,13 +55,13 @@ struct ProductDetailView: View {
                     Text("₹\(product.price + (product.price * product.tax/100))")
                 }
                 .font(.title2)
-                .boldMyText()
+                .bold()
                 .padding(.top,2)
                 
                 HStack {
                     VStack(alignment: .leading) {
                         Text("Breakdown")
-                            .boldMyText()
+                            .bold()
                         
                         Text("Selling Price")
                         

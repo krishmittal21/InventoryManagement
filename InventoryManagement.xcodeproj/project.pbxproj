@@ -21,9 +21,7 @@
 		CC508B962BFF61870027CF16 /* IMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B952BFF61870027CF16 /* IMButton.swift */; };
 		CC508B982BFF61930027CF16 /* IMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B972BFF61920027CF16 /* IMTextField.swift */; };
 		CC508B9A2BFF61A30027CF16 /* IMProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B992BFF61A30027CF16 /* IMProductCardView.swift */; };
-		CC508B9C2BFF67740027CF16 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B9B2BFF67740027CF16 /* ViewExtension.swift */; };
 		CC508BA02BFF7C6F0027CF16 /* IMOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B9F2BFF7C6F0027CF16 /* IMOptionView.swift */; };
-		CCBCDEFF2C0028F600069237 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBCDEFE2C0028F600069237 /* TextFieldExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,9 +40,7 @@
 		CC508B952BFF61870027CF16 /* IMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMButton.swift; sourceTree = "<group>"; };
 		CC508B972BFF61920027CF16 /* IMTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMTextField.swift; sourceTree = "<group>"; };
 		CC508B992BFF61A30027CF16 /* IMProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMProductCardView.swift; sourceTree = "<group>"; };
-		CC508B9B2BFF67740027CF16 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		CC508B9F2BFF7C6F0027CF16 /* IMOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMOptionView.swift; sourceTree = "<group>"; };
-		CCBCDEFE2C0028F600069237 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,8 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				CC508B7E2BFF5C540027CF16 /* ColorExtension.swift */,
-				CC508B9B2BFF67740027CF16 /* ViewExtension.swift */,
-				CCBCDEFE2C0028F600069237 /* TextFieldExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -235,7 +229,6 @@
 				CC508B7F2BFF5C540027CF16 /* ColorExtension.swift in Sources */,
 				CC508B932BFF61240027CF16 /* IMProduct.swift in Sources */,
 				CC508B9A2BFF61A30027CF16 /* IMProductCardView.swift in Sources */,
-				CCBCDEFF2C0028F600069237 /* TextFieldExtension.swift in Sources */,
 				CC508BA02BFF7C6F0027CF16 /* IMOptionView.swift in Sources */,
 				CC508B982BFF61930027CF16 /* IMTextField.swift in Sources */,
 				CC508B872BFF603E0027CF16 /* ProductsListingView.swift in Sources */,
@@ -246,7 +239,6 @@
 				CC508B962BFF61870027CF16 /* IMButton.swift in Sources */,
 				CC508B8D2BFF607C0027CF16 /* ProductsListingViewModel.swift in Sources */,
 				CC508B8B2BFF60650027CF16 /* ProductDetailView.swift in Sources */,
-				CC508B9C2BFF67740027CF16 /* ViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,8 +379,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -417,8 +410,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

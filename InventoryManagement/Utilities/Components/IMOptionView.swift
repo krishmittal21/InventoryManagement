@@ -17,7 +17,7 @@ struct IMOptionView: View {
         ZStack(alignment: .bottom) {
             Text(title)
                 .font(.callout)
-                .boldMyText()
+                .bold()
                 .padding(.bottom, 10)
                 .frame(minWidth: 50)
 

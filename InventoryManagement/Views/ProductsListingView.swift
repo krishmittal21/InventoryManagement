@@ -19,46 +19,37 @@ struct ProductsListingView: View {
     @State private var isShowingProductDetail: Bool = false
     
     var body: some View {
-        if #available(iOS 16.0, *) {
-            NavigationStack {
-                page
+        NavigationStack {
+            ZStack {
+                VStack {
+                    header
+                    
+                    searchBar
+                    
+                    optionSelector
+                    
+                    productListing
+                    
+                    Spacer()
+                }
+                .ignoresSafeArea(.container, edges: .bottom)
+                
+                addProductButton
             }
-        } else {
-            NavigationView {
-                page
-            }
+            .sheet(isPresented: $showAddProduct, content: {
+                AddProductView()
+            })
+            .sheet(isPresented: $isShowingProductDetail, content: {
+                if let selectedProduct = selectedProduct {
+                    ProductDetailView(product: selectedProduct)
+                }
+            })
+
         }
     }
 }
 
 extension ProductsListingView {
-    @ViewBuilder
-    var page: some View {
-        ZStack {
-            VStack {
-                header
-                
-                searchBar
-                
-                optionSelector
-                
-                productListing
-                
-                Spacer()
-            }
-            .ignoresSafeArea(.container, edges: .bottom)
-            
-            addProductButton
-        }
-        .sheet(isPresented: $showAddProduct, content: {
-            AddProductView()
-        })
-        .sheet(isPresented: $isShowingProductDetail, content: {
-            if let selectedProduct = selectedProduct {
-                ProductDetailView(product: selectedProduct)
-            }
-        })
-    }
     
     @ViewBuilder
     var productListing: some View {
@@ -122,7 +113,7 @@ extension ProductsListingView {
             
             Text("Your Products")
                 .font(.title2)
-                .boldMyText()
+                .bold()
             
             Spacer()
         }
@@ -148,7 +139,7 @@ extension ProductsListingView {
                         Text("Add Product")
                     }
                     .foregroundStyle(.white)
-                    .boldMyText()
+                    .bold()
                 }
             }
             .padding(.bottom,10)

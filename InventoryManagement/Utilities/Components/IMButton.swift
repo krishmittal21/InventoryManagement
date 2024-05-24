@@ -22,7 +22,7 @@ struct IMButton: View {
                     .foregroundStyle(background)
                 
                 Text(buttonText)
-                    .boldMyText()
+                    .bold()
                     .foregroundStyle(textColor)
             }
         }
