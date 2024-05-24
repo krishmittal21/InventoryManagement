@@ -79,7 +79,7 @@ extension AddProductView {
                     .customTextFieldStyle()
             }
             
-            Text("Final Price: \(viewModel.finalPrice)")
+            Text("Final Price: \(viewModel.finalPrice.formattedCurrency())")
         }
     }
 }

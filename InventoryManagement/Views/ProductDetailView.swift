@@ -56,7 +56,7 @@ struct ProductDetailView: View {
                     
                     Spacer()
                     
-                    Text("₹\(product.price + (product.price * product.tax/100))")
+                    Text("\((product.price + (product.price * product.tax/100)).formattedCurrency())")
                 }
                 .font(.title2)
                 .bold()
@@ -77,9 +77,9 @@ struct ProductDetailView: View {
                     VStack(alignment: .trailing) {
                         Text("")
                         
-                        Text("₹\(product.price)")
+                        Text("\((product.price).formattedCurrency())")
                         
-                        Text("₹\(product.price * product.tax/100)")
+                        Text("\((product.price * product.tax/100).formattedCurrency())")
                     }
                 }
                 .padding(.top,2)
@@ -87,7 +87,7 @@ struct ProductDetailView: View {
             .padding()
             
             Spacer()
-
+            
         }
         .ignoresSafeArea(edges: .top)
     }

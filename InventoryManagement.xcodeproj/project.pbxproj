@@ -21,6 +21,7 @@
 		CC508B962BFF61870027CF16 /* IMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B952BFF61870027CF16 /* IMButton.swift */; };
 		CC508B9A2BFF61A30027CF16 /* IMProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B992BFF61A30027CF16 /* IMProductCardView.swift */; };
 		CC508BA02BFF7C6F0027CF16 /* IMOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B9F2BFF7C6F0027CF16 /* IMOptionView.swift */; };
+		CCAE52A22C00D50E00E30B92 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAE52A12C00D50E00E30B92 /* DoubleExtension.swift */; };
 		CCBCDF012C0053BF00069237 /* NumberFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBCDF002C0053BF00069237 /* NumberFormatterExtension.swift */; };
 		CCBCDF032C005A5600069237 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBCDF022C005A5600069237 /* TextFieldExtension.swift */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		CC508B952BFF61870027CF16 /* IMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMButton.swift; sourceTree = "<group>"; };
 		CC508B992BFF61A30027CF16 /* IMProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMProductCardView.swift; sourceTree = "<group>"; };
 		CC508B9F2BFF7C6F0027CF16 /* IMOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMOptionView.swift; sourceTree = "<group>"; };
+		CCAE52A12C00D50E00E30B92 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		CCBCDF002C0053BF00069237 /* NumberFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatterExtension.swift; sourceTree = "<group>"; };
 		CCBCDF022C005A5600069237 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +147,7 @@
 				CC508B7E2BFF5C540027CF16 /* ColorExtension.swift */,
 				CCBCDF002C0053BF00069237 /* NumberFormatterExtension.swift */,
 				CCBCDF022C005A5600069237 /* TextFieldExtension.swift */,
+				CCAE52A12C00D50E00E30B92 /* DoubleExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCAE52A22C00D50E00E30B92 /* DoubleExtension.swift in Sources */,
 				CC508B7F2BFF5C540027CF16 /* ColorExtension.swift in Sources */,
 				CC508B932BFF61240027CF16 /* IMProduct.swift in Sources */,
 				CC508B9A2BFF61A30027CF16 /* IMProductCardView.swift in Sources */,

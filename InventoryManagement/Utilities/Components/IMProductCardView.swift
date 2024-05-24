@@ -34,7 +34,7 @@ struct IMProductCardView: View {
                             .font(.subheadline)
                             .padding(.vertical, 1)
                         
-                        Text("₹ \(product.price)")
+                        Text("\((product.price + (product.price * product.tax/100)).formattedCurrency())")
                             .font(.caption2)
                     }
                     
