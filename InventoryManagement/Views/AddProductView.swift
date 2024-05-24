@@ -49,7 +49,7 @@ struct AddProductView: View {
 extension AddProductView {
     @ViewBuilder
     var inputProductDetails: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 10) {
             Picker("Category", selection: $viewModel.productType) {
                 ForEach(ProductType.allCases, id: \.self) {
                     Text($0.rawValue)
@@ -59,25 +59,25 @@ extension AddProductView {
             
             TextField("Item Name", text: $viewModel.name)
                 .customTextFieldStyle()
-                .padding(.vertical, 10)
             
             TextField("Description", text: $viewModel.description, axis: .vertical)
                 .customTextFieldStyle()
-                .padding(.bottom, 10)
             
-            Text("Price")
-                .foregroundStyle(.gray)
+            VStack(alignment: .leading) {
+                Text("Price")
+                    .foregroundStyle(.gray)
+                
+                TextField("Price", value: $viewModel.sellingPrice, formatter: NumberFormatter.currencyFormatter)
+                    .customTextFieldStyle()
+            }
             
-            TextField("Price", value: $viewModel.sellingPrice, formatter: NumberFormatter.currencyFormatter)
-                .customTextFieldStyle()
-                .padding(.bottom, 10)
-            
-            Text("Tax Rate")
-                .foregroundStyle(.gray)
-            
-            TextField("Tax", value: $viewModel.tax, formatter: NumberFormatter.currencyFormatter)
-                .customTextFieldStyle()
-                .padding(.bottom, 10)
+            VStack(alignment: .leading)  {
+                Text("Tax Rate")
+                    .foregroundStyle(.gray)
+                
+                TextField("Tax", value: $viewModel.tax, formatter: NumberFormatter.currencyFormatter)
+                    .customTextFieldStyle()
+            }
             
             Text("Final Price: \(viewModel.finalPrice)")
         }
