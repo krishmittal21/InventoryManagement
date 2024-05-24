@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct IMTextField: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+    @Binding var text: String
+    let title: String
+    let axis: Axis
 
-#Preview {
-    IMTextField()
+    var body: some View {
+        VStack(alignment: .leading) {
+            if #available(iOS 16.0, *) {
+                TextField(title, text: $text, axis: axis)
+                    .textFieldStyle()
+                    .lineLimit(2...15)
+            } else {
+                TextField(title, text: $text)
+                    .textFieldStyle()
+            }
+        }
+    }
 }
