@@ -19,9 +19,10 @@
 		CC508B8F2BFF60FA0027CF16 /* AddProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B8E2BFF60FA0027CF16 /* AddProductViewModel.swift */; };
 		CC508B932BFF61240027CF16 /* IMProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B922BFF61240027CF16 /* IMProduct.swift */; };
 		CC508B962BFF61870027CF16 /* IMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B952BFF61870027CF16 /* IMButton.swift */; };
-		CC508B982BFF61930027CF16 /* IMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B972BFF61920027CF16 /* IMTextField.swift */; };
 		CC508B9A2BFF61A30027CF16 /* IMProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B992BFF61A30027CF16 /* IMProductCardView.swift */; };
 		CC508BA02BFF7C6F0027CF16 /* IMOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B9F2BFF7C6F0027CF16 /* IMOptionView.swift */; };
+		CCBCDF012C0053BF00069237 /* NumberFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBCDF002C0053BF00069237 /* NumberFormatterExtension.swift */; };
+		CCBCDF032C005A5600069237 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBCDF022C005A5600069237 /* TextFieldExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,9 +39,10 @@
 		CC508B8E2BFF60FA0027CF16 /* AddProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewModel.swift; sourceTree = "<group>"; };
 		CC508B922BFF61240027CF16 /* IMProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMProduct.swift; sourceTree = "<group>"; };
 		CC508B952BFF61870027CF16 /* IMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMButton.swift; sourceTree = "<group>"; };
-		CC508B972BFF61920027CF16 /* IMTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMTextField.swift; sourceTree = "<group>"; };
 		CC508B992BFF61A30027CF16 /* IMProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMProductCardView.swift; sourceTree = "<group>"; };
 		CC508B9F2BFF7C6F0027CF16 /* IMOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMOptionView.swift; sourceTree = "<group>"; };
+		CCBCDF002C0053BF00069237 /* NumberFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatterExtension.swift; sourceTree = "<group>"; };
+		CCBCDF022C005A5600069237 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				CC508B7E2BFF5C540027CF16 /* ColorExtension.swift */,
+				CCBCDF002C0053BF00069237 /* NumberFormatterExtension.swift */,
+				CCBCDF022C005A5600069237 /* TextFieldExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -149,7 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				CC508B952BFF61870027CF16 /* IMButton.swift */,
-				CC508B972BFF61920027CF16 /* IMTextField.swift */,
 				CC508B992BFF61A30027CF16 /* IMProductCardView.swift */,
 				CC508B9F2BFF7C6F0027CF16 /* IMOptionView.swift */,
 			);
@@ -229,10 +232,11 @@
 				CC508B7F2BFF5C540027CF16 /* ColorExtension.swift in Sources */,
 				CC508B932BFF61240027CF16 /* IMProduct.swift in Sources */,
 				CC508B9A2BFF61A30027CF16 /* IMProductCardView.swift in Sources */,
+				CCBCDF032C005A5600069237 /* TextFieldExtension.swift in Sources */,
 				CC508BA02BFF7C6F0027CF16 /* IMOptionView.swift in Sources */,
-				CC508B982BFF61930027CF16 /* IMTextField.swift in Sources */,
 				CC508B872BFF603E0027CF16 /* ProductsListingView.swift in Sources */,
 				CC508B8F2BFF60FA0027CF16 /* AddProductViewModel.swift in Sources */,
+				CCBCDF012C0053BF00069237 /* NumberFormatterExtension.swift in Sources */,
 				CC508B732BFF58060027CF16 /* MainView.swift in Sources */,
 				CC508B712BFF58060027CF16 /* InventoryManagementApp.swift in Sources */,
 				CC508B892BFF60500027CF16 /* AddProductView.swift in Sources */,

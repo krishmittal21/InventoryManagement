@@ -18,7 +18,8 @@ struct IMButton: View {
         Button(action: action) {
             ZStack {
                 RoundedRectangle(cornerRadius: 12)
-                    .frame(width: .infinity, height: 50)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
                     .foregroundStyle(background)
                 
                 Text(buttonText)

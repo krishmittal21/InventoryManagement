@@ -8,5 +8,19 @@
 import Foundation
 
 class AddProductViewModel: ObservableObject {
+    @Published var error: String = ""
+    @Published var name: String = ""
+    @Published var description: String = ""
+    @Published var productType: ProductType = .product
+    @Published var sellingPrice: Float = 0.0
+    @Published var tax: Float = 0.0
+    @Published var imageURL: String = ""
+    @Published var category: String = ""
+    @Published var items: [IMProduct] = []
+    @Published var selectedPhotoData = Data()
     
+    var finalPrice: Float {
+            let totalPrice = sellingPrice + (sellingPrice * tax / 100)
+            return totalPrice
+        }
 }
