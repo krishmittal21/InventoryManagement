@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct IMButton: View {
+    
+    var buttonText: String
+    var background: Color
+    var textColor: Color
+    var action: () -> Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: action) {
+            ZStack {
+                RoundedRectangle(cornerRadius: 12)
+                    .frame(width: .infinity, height: 50)
+                    .foregroundStyle(background)
+                
+                Text(buttonText)
+                    .boldMyText()
+                    .foregroundStyle(textColor)
+            }
+        }
+        .padding(.horizontal,5)
     }
-}
-
-#Preview {
-    IMButton()
 }
