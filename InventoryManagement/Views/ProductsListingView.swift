@@ -27,7 +27,13 @@ struct ProductsListingView: View {
                     
                     optionSelector
                     
-                    productListing
+                    if viewModel.isLoading {
+                        Spacer()
+                        ProgressView().tint(Color.brandBlueColor)
+                        Spacer()
+                    } else {
+                        productListing
+                    }
                     
                     Spacer()
                 }
@@ -41,7 +47,7 @@ struct ProductsListingView: View {
             .sheet(item: $selectedProduct) { product in
                 ProductDetailView(product: product)
             }
-
+            
         }
     }
 }
