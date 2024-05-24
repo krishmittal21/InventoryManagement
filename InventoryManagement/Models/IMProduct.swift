@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct IMProduct: Codable, Hashable {
+struct IMProduct: Codable, Hashable, Identifiable {
     
+    var id = UUID()
     var image: String?
     var price: Double
     var productName: String
@@ -41,4 +42,12 @@ enum ProductType: String, CaseIterable {
     case service = "Service"
     case electronics = "Electronics"
     case ptype = "Ptype"
+}
+
+enum JSONKeys: String {
+    case productName = "product_name"
+    case productType = "product_type"
+    case price = "price"
+    case tax = "tax"
+    case image = "image"
 }
