@@ -23,6 +23,7 @@
 		CC508B9A2BFF61A30027CF16 /* IMProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B992BFF61A30027CF16 /* IMProductCardView.swift */; };
 		CC508B9C2BFF67740027CF16 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B9B2BFF67740027CF16 /* ViewExtension.swift */; };
 		CC508BA02BFF7C6F0027CF16 /* IMOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B9F2BFF7C6F0027CF16 /* IMOptionView.swift */; };
+		CCBCDEFF2C0028F600069237 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBCDEFE2C0028F600069237 /* TextFieldExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		CC508B992BFF61A30027CF16 /* IMProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMProductCardView.swift; sourceTree = "<group>"; };
 		CC508B9B2BFF67740027CF16 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		CC508B9F2BFF7C6F0027CF16 /* IMOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMOptionView.swift; sourceTree = "<group>"; };
+		CCBCDEFE2C0028F600069237 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			children = (
 				CC508B7E2BFF5C540027CF16 /* ColorExtension.swift */,
 				CC508B9B2BFF67740027CF16 /* ViewExtension.swift */,
+				CCBCDEFE2C0028F600069237 /* TextFieldExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				CC508B7F2BFF5C540027CF16 /* ColorExtension.swift in Sources */,
 				CC508B932BFF61240027CF16 /* IMProduct.swift in Sources */,
 				CC508B9A2BFF61A30027CF16 /* IMProductCardView.swift in Sources */,
+				CCBCDEFF2C0028F600069237 /* TextFieldExtension.swift in Sources */,
 				CC508BA02BFF7C6F0027CF16 /* IMOptionView.swift in Sources */,
 				CC508B982BFF61930027CF16 /* IMTextField.swift in Sources */,
 				CC508B872BFF603E0027CF16 /* ProductsListingView.swift in Sources */,
