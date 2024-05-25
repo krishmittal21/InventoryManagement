@@ -12,15 +12,13 @@ struct ProductDetailView: View {
     var product: IMProduct
     
     var body: some View {
-        VStack {
+        ScrollView {
             ZStack(alignment: .topTrailing) {
-                // The API contains image: "" no links given, for testing use testImageURL
                 AsyncImage(url: URL(string: product.image!)) { image in
                     image.resizable()
                 } placeholder: {
                     Image("DefaultProductImage").resizable()
                 }
-                .ignoresSafeArea(edges: .top)
                 .frame(height: 300)
                 
                 Image(systemName: "heart.fill")
@@ -64,7 +62,7 @@ struct ProductDetailView: View {
                 
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("Breakdown")
+                        Text("Price Breakdown")
                             .bold()
                         
                         Text("Selling Price")
@@ -83,13 +81,20 @@ struct ProductDetailView: View {
                     }
                 }
                 .padding(.top,2)
+                .padding(.bottom,5)
+                
+                Text("Description")
+                    .font(.title3)
+                    .bold()
+                
+                Text(lorenIpsum)
             }
             .padding()
             
             Spacer()
             
         }
-        .ignoresSafeArea(edges: .top)
+        .ignoresSafeArea(edges: .vertical)
     }
 }
 
