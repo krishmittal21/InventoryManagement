@@ -12,6 +12,9 @@ struct AddProductView: View {
     
     @StateObject private var viewModel = AddProductViewModel()
     @State private var photoPickerItems = [PhotosPickerItem]()
+    @Environment(\.presentationMode) var presentationMode
+    @State var isSaveButton: Bool = false
+    @State var isAddButton: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -22,6 +25,11 @@ struct AddProductView: View {
                     
                     productPhotoPicker
                     
+                    if let error = viewModel.errorMessage {
+                        Text(error)
+                            .foregroundStyle(.red)
+                    }
+                    
                     inputProductDetails
                     
                 }
@@ -29,24 +37,57 @@ struct AddProductView: View {
                 
                 Divider()
                 
-                HStack {
-                    IMButton(buttonText: "Save", background: Color.brandBlueColor, textColor: .white) {
-                        
-                    }
-                    
-                    IMButton(buttonText: "Add Another", background: Color.brandBlueColor.opacity(0.2), textColor: Color.brandBlueColor) {
-                        
+                if viewModel.isLoaded {
+                    ProgressView().tint(Color.brandBlueColor)
+                } else {
+                    saveButtons
+                }
+            }
+            .navigationTitle("Add Product")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
+                            .foregroundColor(.red)
                     }
                 }
-                .padding()
-                .navigationTitle("Add Product")
-                .navigationBarTitleDisplayMode(.inline)
+            }
+            .alert(viewModel.isSuccess ? "Success" : "Failure", isPresented: $viewModel.isLoaded) {
+                Button("Ok", role: .cancel ) {
+                    if isSaveButton {
+                        presentationMode.wrappedValue.dismiss()
+                    } else {
+                        viewModel.clearFields()
+                    }
+                }
+            } message: {
+                Text(viewModel.alertMessage)
             }
         }
     }
 }
 
 extension AddProductView {
+    
+    @ViewBuilder
+    var saveButtons: some View {
+        HStack {
+            IMButton(buttonText: "Save", background: Color.brandBlueColor, textColor: .white) {
+                viewModel.uploadProducts()
+                isSaveButton = true
+            }
+            
+            IMButton(buttonText: "Add Another", background: Color.brandBlueColor.opacity(0.2), textColor: Color.brandBlueColor) {
+                viewModel.uploadProducts()
+                isAddButton = true
+            }
+        }
+        .padding()
+    }
+    
     @ViewBuilder
     var inputProductDetails: some View {
         VStack(alignment: .leading, spacing: 10) {

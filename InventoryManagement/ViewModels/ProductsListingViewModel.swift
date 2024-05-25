@@ -12,6 +12,7 @@ class ProductsListingViewModel: ObservableObject {
     @Published var products: [IMProduct] = []
     @Published var isLoading: Bool = false
     @Published var search: String = ""
+    private let urlString = "https://app.getswipe.in/api/public/get"
     
     var filteredProducts: [IMProduct] {
         guard !search.isEmpty else {return products}
@@ -23,7 +24,6 @@ class ProductsListingViewModel: ObservableObject {
     func fetchProducts() {
         isLoading = true
         
-        let urlString = "https://app.getswipe.in/api/public/get"
         guard let url = URL(string: urlString) else {
             isLoading = false
             return
@@ -52,24 +52,11 @@ class ProductsListingViewModel: ObservableObject {
             }
         }.resume()
     }
-    
+
     func parseJSONData(_ data: Data) -> [IMProduct]? {
         do {
-            let jsonArray = try JSONSerialization.jsonObject(with: data) as? [[String: Any]]
-            var products = [IMProduct]()
-            
-            jsonArray?.forEach { dict in
-                if let name = dict[JSONKeys.productName.rawValue] as? String,
-                   let type = dict[JSONKeys.productType.rawValue] as? String,
-                   let price = dict[JSONKeys.price.rawValue] as? Double,
-                   let tax = dict[JSONKeys.tax.rawValue] as? Double,
-                   let imageURL = dict[JSONKeys.image.rawValue] as? String {
-                    let product = IMProduct(id: UUID(), image: imageURL, price: price, productName: name, productType: type, tax: tax)
-                    products.append(product)
-                }
-            }
-            
-            return products
+            let responseData = try JSONDecoder().decode([IMProduct].self, from: data)
+            return responseData
         } catch {
             print("Error decoding JSON: \(error)")
             return nil

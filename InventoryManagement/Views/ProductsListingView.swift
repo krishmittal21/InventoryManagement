@@ -66,6 +66,9 @@ extension ProductsListingView {
             }
             .padding(.horizontal, 15)
         }
+        .refreshable {
+            viewModel.fetchProducts() 
+        }
     }
     
     @ViewBuilder

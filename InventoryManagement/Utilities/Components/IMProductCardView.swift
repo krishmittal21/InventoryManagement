@@ -15,7 +15,6 @@ struct IMProductCardView: View {
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             VStack(alignment: .leading) {
-                // The API contains image: "" no links given, for testing use testImageURL
                 AsyncImage(url: URL(string: product.image!)) { image in
                     image.resizable()
                 } placeholder: {
