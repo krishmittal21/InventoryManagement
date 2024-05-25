@@ -10,6 +10,7 @@ import SwiftUI
 struct ProductDetailView: View {
     
     var product: IMProduct
+    @State var inStock = true
     
     var body: some View {
         ScrollView {
@@ -21,12 +22,10 @@ struct ProductDetailView: View {
                 }
                 .frame(height: 300)
                 
-                Image(systemName: "heart.fill")
-                    .resizable()
-                    .frame(width: 25, height: 25)
+                Toggle("", isOn: $inStock)
                     .padding(.top, 65)
                     .padding(.trailing, 20)
-                    .foregroundStyle(Color.brandBlueColor)
+                    .tint(Color.brandBlueColor)
             }
             
             VStack(alignment: .leading) {
