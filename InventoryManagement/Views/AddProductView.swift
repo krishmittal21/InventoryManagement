@@ -35,7 +35,11 @@ struct AddProductView: View {
                 
                 Divider()
                 
-                saveButtons
+                if viewModel.isLoading {
+                    ProgressView().tint(Color.brandBlueColor)
+                } else {
+                    saveButtons
+                }
             }
             .navigationTitle("Add Product")
             .navigationBarTitleDisplayMode(.inline)
