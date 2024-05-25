@@ -26,6 +26,17 @@ class AddProductViewModel: ObservableObject {
         let totalPrice = sellingPrice + (sellingPrice * tax / 100)
         return totalPrice
     }
+    
+    func clearItem() {
+        error = ""
+        name = ""
+        description = ""
+        sellingPrice = 0
+        tax = 0
+        category = ""
+        items = []
+        selectedPhotoData = Data()
+    }
 
     func uploadProducts() {
         isLoading = true

@@ -35,26 +35,17 @@ struct AddProductView: View {
                 
                 Divider()
                 
-                HStack {
-                    IMButton(buttonText: "Save", background: Color.brandBlueColor, textColor: .white) {
-                        viewModel.uploadProducts()
-                    }
-                    
-                    IMButton(buttonText: "Add Another", background: Color.brandBlueColor.opacity(0.2), textColor: Color.brandBlueColor) {
-                        
-                    }
-                }
-                .padding()
-                .navigationTitle("Add Product")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Button {
-                            presentationMode.wrappedValue.dismiss()
-                        } label: {
-                            Image(systemName: "xmark")
-                                .foregroundColor(.red)
-                        }
+                saveButtons
+            }
+            .navigationTitle("Add Product")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
+                            .foregroundColor(.red)
                     }
                 }
             }
@@ -63,6 +54,23 @@ struct AddProductView: View {
 }
 
 extension AddProductView {
+    
+    @ViewBuilder
+    var saveButtons: some View {
+        HStack {
+            IMButton(buttonText: "Save", background: Color.brandBlueColor, textColor: .white) {
+                viewModel.uploadProducts()
+                presentationMode.wrappedValue.dismiss()
+            }
+            
+            IMButton(buttonText: "Add Another", background: Color.brandBlueColor.opacity(0.2), textColor: Color.brandBlueColor) {
+                viewModel.uploadProducts()
+                viewModel.clearItem()
+            }
+        }
+        .padding()
+    }
+    
     @ViewBuilder
     var inputProductDetails: some View {
         VStack(alignment: .leading, spacing: 10) {
