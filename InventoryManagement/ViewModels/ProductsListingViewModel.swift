@@ -11,7 +11,13 @@ class ProductsListingViewModel: ObservableObject {
     
     @Published var products: [IMProduct] = []
     @Published var isLoading: Bool = false
+    @Published var search: String = ""
     
+    var filteredProducts: [IMProduct] {
+        guard !search.isEmpty else {return products}
+        return products.filter { $0.productName.localizedCaseInsensitiveContains(search) }
+    }
+
     init() { fetchProducts() }
     
     func fetchProducts() {

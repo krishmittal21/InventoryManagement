@@ -11,7 +11,6 @@ struct ProductsListingView: View {
     
     @StateObject private var viewModel = ProductsListingViewModel()
     @State private var showAddProduct: Bool = false
-    @State private var search: String = ""
     @State private var selectedOption = "In Stock"
     @Namespace private var namespace
     private var columns = [GridItem(.flexible()), GridItem(.flexible())]
@@ -58,7 +57,7 @@ extension ProductsListingView {
     var productListing: some View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 16) {
-                ForEach(viewModel.products) { product in
+                ForEach(viewModel.filteredProducts) { product in
                     IMProductCardView(product: product)
                         .onTapGesture {
                             selectedProduct = product
@@ -92,7 +91,7 @@ extension ProductsListingView {
     var searchBar: some View {
         HStack {
             HStack {
-                TextField("Search For Your Products", text: $search)
+                TextField("Search For Your Products", text: $viewModel.search)
                     .padding()
                 
                 Image(systemName: "magnifyingglass")
