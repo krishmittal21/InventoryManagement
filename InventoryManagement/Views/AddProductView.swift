@@ -65,7 +65,7 @@ extension AddProductView {
             
             IMButton(buttonText: "Add Another", background: Color.brandBlueColor.opacity(0.2), textColor: Color.brandBlueColor) {
                 viewModel.uploadProducts()
-                viewModel.clearItem()
+                viewModel.clearFields()
             }
         }
         .padding()

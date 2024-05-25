@@ -27,16 +27,18 @@ class AddProductViewModel: ObservableObject {
         return totalPrice
     }
     
-    func clearItem() {
+    func clearFields() {
         error = ""
         name = ""
         description = ""
-        sellingPrice = 0
-        tax = 0
+        productType = .product
+        sellingPrice = 0.0
+        tax = 0.0
         category = ""
-        items = []
+        items.removeAll()
         selectedPhotoData = Data()
     }
+
 
     func uploadProducts() {
         isLoading = true
