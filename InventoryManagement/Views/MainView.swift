@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct MainView: View {
+    @StateObject private var networkManager = NetworkManager()
+    
     var body: some View {
-        ProductsListingView()
+        
+        if networkManager.isConnected {
+            ProductsListingView()
+        } else {
+            NoNetworkView()
+        }
     }
 }
 

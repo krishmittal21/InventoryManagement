@@ -21,6 +21,8 @@
 		CC508B962BFF61870027CF16 /* IMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B952BFF61870027CF16 /* IMButton.swift */; };
 		CC508B9A2BFF61A30027CF16 /* IMProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B992BFF61A30027CF16 /* IMProductCardView.swift */; };
 		CC508BA02BFF7C6F0027CF16 /* IMOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508B9F2BFF7C6F0027CF16 /* IMOptionView.swift */; };
+		CC67E1A52C01A6EE003220B7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC67E1A42C01A6EE003220B7 /* NetworkManager.swift */; };
+		CC67E1A72C01A7D5003220B7 /* NoNetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC67E1A62C01A7D5003220B7 /* NoNetworkView.swift */; };
 		CCAE52A22C00D50E00E30B92 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAE52A12C00D50E00E30B92 /* DoubleExtension.swift */; };
 		CCBCDF012C0053BF00069237 /* NumberFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBCDF002C0053BF00069237 /* NumberFormatterExtension.swift */; };
 		CCBCDF032C005A5600069237 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBCDF022C005A5600069237 /* TextFieldExtension.swift */; };
@@ -42,6 +44,8 @@
 		CC508B952BFF61870027CF16 /* IMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMButton.swift; sourceTree = "<group>"; };
 		CC508B992BFF61A30027CF16 /* IMProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMProductCardView.swift; sourceTree = "<group>"; };
 		CC508B9F2BFF7C6F0027CF16 /* IMOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMOptionView.swift; sourceTree = "<group>"; };
+		CC67E1A42C01A6EE003220B7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		CC67E1A62C01A7D5003220B7 /* NoNetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkView.swift; sourceTree = "<group>"; };
 		CCAE52A12C00D50E00E30B92 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		CCBCDF002C0053BF00069237 /* NumberFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatterExtension.swift; sourceTree = "<group>"; };
 		CCBCDF022C005A5600069237 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 				CC508B862BFF603E0027CF16 /* ProductsListingView.swift */,
 				CC508B882BFF60500027CF16 /* AddProductView.swift */,
 				CC508B8A2BFF60650027CF16 /* ProductDetailView.swift */,
+				CC67E1A62C01A7D5003220B7 /* NoNetworkView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			children = (
 				CC508B8C2BFF607C0027CF16 /* ProductsListingViewModel.swift */,
 				CC508B8E2BFF60FA0027CF16 /* AddProductViewModel.swift */,
+				CC67E1A42C01A6EE003220B7 /* NetworkManager.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 				CC508B7F2BFF5C540027CF16 /* ColorExtension.swift in Sources */,
 				CC508B932BFF61240027CF16 /* IMProduct.swift in Sources */,
 				CC508B9A2BFF61A30027CF16 /* IMProductCardView.swift in Sources */,
+				CC67E1A52C01A6EE003220B7 /* NetworkManager.swift in Sources */,
 				CCBCDF032C005A5600069237 /* TextFieldExtension.swift in Sources */,
 				CC508BA02BFF7C6F0027CF16 /* IMOptionView.swift in Sources */,
 				CC508B872BFF603E0027CF16 /* ProductsListingView.swift in Sources */,
@@ -247,6 +254,7 @@
 				CC508B962BFF61870027CF16 /* IMButton.swift in Sources */,
 				CC508B8D2BFF607C0027CF16 /* ProductsListingViewModel.swift in Sources */,
 				CC508B8B2BFF60650027CF16 /* ProductDetailView.swift in Sources */,
+				CC67E1A72C01A7D5003220B7 /* NoNetworkView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
