@@ -22,6 +22,11 @@ struct AddProductView: View {
                     
                     productPhotoPicker
                     
+                    if let error = viewModel.error {
+                        Text(error)
+                            .foregroundStyle(.red)
+                    }
+                    
                     inputProductDetails
                     
                 }
@@ -31,7 +36,7 @@ struct AddProductView: View {
                 
                 HStack {
                     IMButton(buttonText: "Save", background: Color.brandBlueColor, textColor: .white) {
-                        
+                        viewModel.uploadProducts()
                     }
                     
                     IMButton(buttonText: "Add Another", background: Color.brandBlueColor.opacity(0.2), textColor: Color.brandBlueColor) {

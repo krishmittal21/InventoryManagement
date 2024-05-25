@@ -12,6 +12,7 @@ class ProductsListingViewModel: ObservableObject {
     @Published var products: [IMProduct] = []
     @Published var isLoading: Bool = false
     @Published var search: String = ""
+    private let urlString = "https://app.getswipe.in/api/public/get"
     
     var filteredProducts: [IMProduct] {
         guard !search.isEmpty else {return products}
@@ -23,7 +24,6 @@ class ProductsListingViewModel: ObservableObject {
     func fetchProducts() {
         isLoading = true
         
-        let urlString = "https://app.getswipe.in/api/public/get"
         guard let url = URL(string: urlString) else {
             isLoading = false
             return
