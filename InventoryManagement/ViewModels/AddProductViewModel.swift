@@ -38,8 +38,8 @@ class AddProductViewModel: ObservableObject {
         items.removeAll()
         selectedPhotoData = Data()
     }
-
-
+    
+    
     func uploadProducts() {
         isLoading = true
         
@@ -56,14 +56,19 @@ class AddProductViewModel: ObservableObject {
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        
-        
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
-        appendFormField(boundary: boundary, name: JSONKeys.productName.rawValue, value: name)
-        appendFormField(boundary: boundary, name: JSONKeys.productType.rawValue, value: productType.rawValue)
-        appendFormField(boundary: boundary, name: JSONKeys.price.rawValue, value: sellingPrice)
-        appendFormField(boundary: boundary, name: JSONKeys.tax.rawValue, value: tax)
+        let formFields: [(String, LosslessStringConvertible)] = [
+            (JSONKeys.productName.rawValue, name),
+            (JSONKeys.productType.rawValue, productType.rawValue),
+            (JSONKeys.price.rawValue, sellingPrice),
+            (JSONKeys.tax.rawValue, tax)
+        ]
+        
+        for (key, value) in formFields {
+            appendFormField(boundary: boundary, name: key, value: value)
+        }
+        
         if !selectedPhotoData.isEmpty {
             body.append(appendFileField(boundary: boundary, name: JSONKeys.files.rawValue, data: selectedPhotoData, filename: "image.jpg", contentType: "image/jpeg"))
         }
@@ -90,8 +95,8 @@ class AddProductViewModel: ObservableObject {
             }
             
             do {
-                let response = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                print(response)
+                let responseData = try JSONDecoder().decode(IMAPIResponseData.self, from: data)
+                print("Message: \(responseData.message)")
             } catch {
                 print(error)
             }
@@ -113,3 +118,5 @@ class AddProductViewModel: ObservableObject {
         body.append(fieldData.data(using: .utf8)!)
     }
 }
+
+

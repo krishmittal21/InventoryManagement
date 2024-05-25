@@ -7,14 +7,21 @@
 
 import Foundation
 
-struct IMProduct: Codable, Hashable, Identifiable {
-    
+struct IMProduct: Codable, Identifiable, Hashable {
     var id = UUID()
     var image: String?
     var price: Double
     var productName: String
     var productType: String
     var tax: Double
+
+    enum CodingKeys: String, CodingKey {
+        case image
+        case price
+        case productName = "product_name"
+        case productType = "product_type"
+        case tax
+    }
 }
 
 var productList = [
