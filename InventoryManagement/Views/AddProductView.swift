@@ -12,6 +12,7 @@ struct AddProductView: View {
     
     @StateObject private var viewModel = AddProductViewModel()
     @State private var photoPickerItems = [PhotosPickerItem]()
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationStack {
@@ -46,6 +47,16 @@ struct AddProductView: View {
                 .padding()
                 .navigationTitle("Add Product")
                 .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button {
+                            presentationMode.wrappedValue.dismiss()
+                        } label: {
+                            Image(systemName: "xmark")
+                                .foregroundColor(.red)
+                        }
+                    }
+                }
             }
         }
     }
