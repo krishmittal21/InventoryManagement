@@ -8,7 +8,7 @@
 import Foundation
 
 class AddProductViewModel: ObservableObject {
-    @Published var error: String? = ""
+    @Published var errorMessage: String? = ""
     @Published var name: String = ""
     @Published var description: String = ""
     @Published var productType: ProductType = .product
@@ -17,7 +17,9 @@ class AddProductViewModel: ObservableObject {
     @Published var category: String = ""
     @Published var items: [IMProduct] = []
     @Published var selectedPhotoData = Data()
-    @Published var isLoading: Bool = false
+    @Published var isLoaded: Bool = false
+    @Published var alertMessage: String = ""
+    @Published var isSuccess: Bool = false
     private let urlString = "https://app.getswipe.in/api/public/add"
     private var body = Data()
     private let boundary = UUID().uuidString
@@ -28,7 +30,7 @@ class AddProductViewModel: ObservableObject {
     }
     
     func clearFields() {
-        error = ""
+        errorMessage = ""
         name = ""
         description = ""
         productType = .product
@@ -41,16 +43,20 @@ class AddProductViewModel: ObservableObject {
     
     
     func uploadProducts() {
-        isLoading = true
+        isLoaded = false
         
         guard !name.isEmpty, !description.isEmpty else {
-            error = "Please fill in all fields"
-            isLoading = false
+            DispatchQueue.main.async {
+                self.errorMessage = "Please fill in all fields"
+                self.isLoaded = true
+            }
             return
         }
         
         guard let url = URL(string: urlString) else {
-            isLoading = false
+            DispatchQueue.main.async {
+                self.isLoaded = true
+            }
             return
         }
         
@@ -77,28 +83,31 @@ class AddProductViewModel: ObservableObject {
         request.httpBody = body
         
         let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
-            if let error = error {
-                print("Error fetching data: \(error)")
-                self?.isLoading = false
-                return
-            }
-            
-            guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
-                print("Server responded with an error")
-                self?.isLoading = false
-                return
-            }
-            
-            guard let data = data else {
-                self?.isLoading = false
-                return
-            }
-            
-            do {
-                let responseData = try JSONDecoder().decode(IMAPIResponseData.self, from: data)
-                print("Message: \(responseData.message)")
-            } catch {
-                print(error)
+            DispatchQueue.main.async {
+                if let error = error {
+                    self?.alertMessage =  "Error fetching data: \(error)"
+                    self?.isLoaded = true
+                    return
+                }
+                
+                guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                    self?.alertMessage = "Server responded with an error"
+                    self?.isLoaded = true
+                    return
+                }
+                
+                guard let data = data else {
+                    return
+                }
+                
+                do {
+                    let responseData = try JSONDecoder().decode(IMAPIResponseData.self, from: data)
+                    self?.alertMessage = "\(responseData.message)"
+                    self?.isSuccess = true
+                    self?.isLoaded = true
+                } catch {
+                    print(error)
+                }
             }
         }
         task.resume()
