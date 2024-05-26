@@ -11,10 +11,11 @@ struct ProductDetailView: View {
     
     var product: IMProduct
     @State var inStock = true
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         ScrollView {
-            ZStack(alignment: .topTrailing) {
+            ZStack(alignment: .topLeading) {
                 AsyncImage(url: URL(string: product.image!)) { image in
                     image.resizable()
                 } placeholder: {
@@ -22,10 +23,22 @@ struct ProductDetailView: View {
                 }
                 .frame(height: 300)
                 
-                Toggle("", isOn: $inStock)
-                    .padding(.top, 65)
-                    .padding(.trailing, 20)
-                    .tint(Color.brandBlueColor)
+                HStack {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundColor(.red)
+                    }
+                    .padding()
+                    
+                    Spacer()
+                    
+                    Toggle("", isOn: $inStock)
+                        .padding(.top, 65)
+                        .padding(.trailing, 20)
+                        .tint(Color.brandBlueColor)
+                }
             }
             
             VStack(alignment: .leading) {
