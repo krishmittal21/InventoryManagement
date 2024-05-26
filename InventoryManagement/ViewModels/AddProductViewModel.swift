@@ -15,7 +15,6 @@ class AddProductViewModel: ObservableObject {
     @Published var sellingPrice: Double = 0.0
     @Published var tax: Double = 0.0
     @Published var category: String = ""
-    @Published var items: [IMProduct] = []
     @Published var selectedPhotoData = Data()
     @Published var isLoaded: Bool = false
     @Published var alertMessage: String = ""
@@ -37,7 +36,6 @@ class AddProductViewModel: ObservableObject {
         sellingPrice = 0.0
         tax = 0.0
         category = ""
-        items.removeAll()
         selectedPhotoData = Data()
     }
     
