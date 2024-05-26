@@ -4,6 +4,8 @@ This is a take-home project given by Swipe.
 
 ## Objectives
 
+[Assignment](https://github.com/krishmittal21/InventoryManagement/blob/main/Documentation/SwipeYC21AssignmentDocumentation.pdf)
+
 ### Listing Product Screen
 
 - Develop a screen that displays a list of products
