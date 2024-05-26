@@ -106,7 +106,7 @@ class AddProductViewModel: ObservableObject {
                     self?.isSuccess = true
                     self?.isLoaded = true
                 } catch {
-                    print(error)
+                    self?.alertMessage = "\(error)"
                 }
             }
         }

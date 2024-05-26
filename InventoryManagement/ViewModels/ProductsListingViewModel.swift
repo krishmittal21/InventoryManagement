@@ -58,7 +58,6 @@ class ProductsListingViewModel: ObservableObject {
             let responseData = try JSONDecoder().decode([IMProduct].self, from: data)
             return responseData
         } catch {
-            print("Error decoding JSON: \(error)")
             return nil
         }
     }
