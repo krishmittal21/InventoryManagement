@@ -9,4 +9,5 @@ import SwiftUI
 
 extension Color {
     static let brandBlueColor = Color("BrandBlue")
+    static let logoBackgroundColor = Color("LogoBackground")
 }

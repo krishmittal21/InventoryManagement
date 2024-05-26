@@ -24,6 +24,7 @@
 		CC67E1A52C01A6EE003220B7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC67E1A42C01A6EE003220B7 /* NetworkManager.swift */; };
 		CC67E1A72C01A7D5003220B7 /* NoNetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC67E1A62C01A7D5003220B7 /* NoNetworkView.swift */; };
 		CC67E1AF2C020C07003220B7 /* IMAPIResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC67E1AE2C020C07003220B7 /* IMAPIResponseData.swift */; };
+		CC801AEE2C035FF200AB55A9 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC801AED2C035FF200AB55A9 /* SplashScreenView.swift */; };
 		CCAE52A22C00D50E00E30B92 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAE52A12C00D50E00E30B92 /* DoubleExtension.swift */; };
 		CCBCDF012C0053BF00069237 /* NumberFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBCDF002C0053BF00069237 /* NumberFormatterExtension.swift */; };
 		CCBCDF032C005A5600069237 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBCDF022C005A5600069237 /* TextFieldExtension.swift */; };
@@ -48,6 +49,7 @@
 		CC67E1A42C01A6EE003220B7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CC67E1A62C01A7D5003220B7 /* NoNetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkView.swift; sourceTree = "<group>"; };
 		CC67E1AE2C020C07003220B7 /* IMAPIResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMAPIResponseData.swift; sourceTree = "<group>"; };
+		CC801AED2C035FF200AB55A9 /* SplashScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		CCAE52A12C00D50E00E30B92 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		CCBCDF002C0053BF00069237 /* NumberFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatterExtension.swift; sourceTree = "<group>"; };
 		CCBCDF022C005A5600069237 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		CC508B822BFF5F800027CF16 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CC801AED2C035FF200AB55A9 /* SplashScreenView.swift */,
 				CC508B722BFF58060027CF16 /* MainView.swift */,
 				CC508B862BFF603E0027CF16 /* ProductsListingView.swift */,
 				CC508B882BFF60500027CF16 /* AddProductView.swift */,
@@ -252,6 +255,7 @@
 				CC508B872BFF603E0027CF16 /* ProductsListingView.swift in Sources */,
 				CC508B8F2BFF60FA0027CF16 /* AddProductViewModel.swift in Sources */,
 				CCBCDF012C0053BF00069237 /* NumberFormatterExtension.swift in Sources */,
+				CC801AEE2C035FF200AB55A9 /* SplashScreenView.swift in Sources */,
 				CC508B732BFF58060027CF16 /* MainView.swift in Sources */,
 				CC508B712BFF58060027CF16 /* InventoryManagementApp.swift in Sources */,
 				CC508B892BFF60500027CF16 /* AddProductView.swift in Sources */,

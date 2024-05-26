@@ -11,7 +11,7 @@ import SwiftUI
 struct InventoryManagementApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            SplashScreenView()
         }
     }
 }
