@@ -1,6 +1,7 @@
 # Inventory Management
 
 This is a take-home project given by Swipe.
+[Documentation](https://github.com/krishmittal21/InventoryManagement/blob/main/Documentation/Inventory%20Management%20iOS%20App.pdf)
 
 ## Objectives
 
