@@ -53,7 +53,7 @@ This is a take-home project given by Swipe.
  ## Screenshots
 
 | Product List | Search Product | Product Detail |
-|---|---|---|---|
+|---|---|---|
 | <img src="https://github.com/krishmittal21/InventoryManagement/blob/main/Documentation/Screenshots/productlist.png" width="200" height="400"> | <img src="https://github.com/krishmittal21/InventoryManagement/blob/main/Documentation/Screenshots/search.png" width="200" height="400"> | <img src="https://github.com/krishmittal21/InventoryManagement/blob/main/Documentation/Screenshots/productdetail.png" width="200" height="400"> |
 
 | Add Product | Add Example | Example Price | Add Alert |
