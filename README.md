@@ -52,6 +52,7 @@ This is a take-home project given by Swipe.
 
  ## Screenshots
 
+ ### Light Mode
 | Product List | Search Product | Product Detail |
 |---|---|---|
 | <img src="https://github.com/krishmittal21/InventoryManagement/blob/main/Documentation/Screenshots/productlist.png" width="200" height="400"> | <img src="https://github.com/krishmittal21/InventoryManagement/blob/main/Documentation/Screenshots/search.png" width="200" height="400"> | <img src="https://github.com/krishmittal21/InventoryManagement/blob/main/Documentation/Screenshots/productdetail.png" width="200" height="400"> |
@@ -59,6 +60,15 @@ This is a take-home project given by Swipe.
 | Add Product | Add Example | Example Price | Add Alert |
 |---|---|---|---|
 | <img src="https://github.com/krishmittal21/InventoryManagement/blob/main/Documentation/Screenshots/addproduct.png" width="200" height="400"> | <img src="https://github.com/krishmittal21/InventoryManagement/blob/main/Documentation/Screenshots/addproductex.png" width="200" height="400"> | <img src="https://github.com/krishmittal21/InventoryManagement/blob/main/Documentation/Screenshots/addproductextax.png" width="200" height="400"> | <img src="https://github.com/krishmittal21/InventoryManagement/blob/main/Documentation/Screenshots/alert.png" width="200" height="400"> | 
+
+### Dark Mode
+| Product List | Search Product | Product Detail |
+|---|---|---|
+| <img src="https://github.com/krishmittal21/InventoryManagement/blob/main/Documentation/Screenshots/dark/productlist.png" width="200" height="400"> | <img src="https://github.com/krishmittal21/InventoryManagement/blob/main/Documentation/Screenshots/dark/search.png" width="200" height="400"> | <img src="https://github.com/krishmittal21/InventoryManagement/blob/main/Documentation/Screenshots/dark/productdetail.png" width="200" height="400"> |
+
+| Add Product | Add Example | Add Alert |
+|---|---|---|
+| <img src="https://github.com/krishmittal21/InventoryManagement/blob/main/Documentation/Screenshots/dark/addproduct.png" width="200" height="400"> | <img src="https://github.com/krishmittal21/InventoryManagement/blob/main/Documentation/Screenshots/dark/addproductex.png" width="200" height="400"> | <img src="https://github.com/krishmittal21/InventoryManagement/blob/main/Documentation/Screenshots/dark/alert.png" width="200" height="400"> | 
 
 ## Installation
 
