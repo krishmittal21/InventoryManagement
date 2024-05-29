@@ -55,8 +55,8 @@ class ProductsListingViewModel: ObservableObject {
 
     func parseJSONData(_ data: Data) -> [IMProduct]? {
         do {
-            let responseData = try JSONDecoder().decode([IMProduct].self, from: data)
-            return responseData
+            return try JSONDecoder().decode([IMProduct].self, from: data)
+//            return responseData
         } catch {
             return nil
         }

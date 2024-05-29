@@ -99,6 +99,12 @@ class AddProductViewModel: ObservableObject {
                 }
                 
                 do {
+                    // Without having enum coding keys in my model
+                    /*
+                     decoder = JSONDecoder()
+                     decoder.keyDecodingStratergy = .convertFromSnakeScase
+                     decoder.decode(IMAPIResponseData.self, from: data)
+                     */
                     let responseData = try JSONDecoder().decode(IMAPIResponseData.self, from: data)
                     self?.alertMessage = "\(responseData.message)"
                     self?.isSuccess = true
