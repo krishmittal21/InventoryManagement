@@ -16,7 +16,7 @@ struct ProductDetailView: View {
     var body: some View {
         ScrollView {
             ZStack(alignment: .topLeading) {
-                AsyncImage(url: URL(string: product.image!)) { image in
+                AsyncImage(url: URL(string: product.image ?? "")) { image in
                     image.resizable()
                 } placeholder: {
                     Image("DefaultProductImage").resizable()

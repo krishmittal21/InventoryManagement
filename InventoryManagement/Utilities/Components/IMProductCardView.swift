@@ -15,7 +15,7 @@ struct IMProductCardView: View {
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             VStack(alignment: .leading) {
-                AsyncImage(url: URL(string: product.image!)) { image in
+                AsyncImage(url: URL(string: product.image ?? "")) { image in
                     image.resizable()
                 } placeholder: {
                     Image("DefaultProductImage").resizable()
